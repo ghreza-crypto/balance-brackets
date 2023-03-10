@@ -33,6 +33,9 @@ function balancedBrackets(string) {
       stack.push(element);
 
     } else if (element == ')' || element == ']' || element == '}') {
+      if(stack.isEmpty()){
+        return false;
+      }
       let temp = stack.pop();
       if (temp == '(' && element != ')') {
         return false;
